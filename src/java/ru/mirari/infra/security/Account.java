@@ -48,7 +48,7 @@ public class Account extends Domain{
     boolean accountLocked;
     boolean passwordExpired;
 
-    static public class Dao extends BaseDao<Account> {
+    static public class Dao extends BaseDao<Account> implements AccountRepository{
         @Autowired private transient SpringSecurityService springSecurityService;
 
         @Autowired

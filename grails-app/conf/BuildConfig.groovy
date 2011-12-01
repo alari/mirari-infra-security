@@ -36,6 +36,8 @@ grails.project.dependency.resolution = {
               ":release:1.0.0.RC3") {
             export = false
         }
-        runtime ':spring-security-core:1.2.4'
+        runtime ':spring-security-core:1.2.4', {
+            excludes "hibernate"
+        }
     }
 }

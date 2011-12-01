@@ -19,7 +19,7 @@ import java.util.*;
 public class UserDetailsService implements GrailsUserDetailsService {
     static private final Logger log = Logger.getLogger(UserDetailsService.class);
 
-    @Autowired Account.Dao accountDao;
+    @Autowired AccountRepository accountRepository;
 
     /**
      * Some Spring Security classes (e.g. RoleHierarchyVoter) expect at least one role, so
@@ -34,7 +34,7 @@ public class UserDetailsService implements GrailsUserDetailsService {
             log.debug("Attempted user logon: ".concat(email));
         }
 
-        Account account = accountDao.getByEmail(email);
+        Account account = accountRepository.getByEmail(email);
 
         if(account == null) {
             log.warn("User not found: ".concat(email));

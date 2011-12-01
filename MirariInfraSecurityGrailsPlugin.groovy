@@ -46,7 +46,7 @@ Brief summary/description of the plugin.
         // TODO Implement additions to web.xml (optional), this event occurs before
     }
 
-    def doWithSpring = {
+    def doWithSpring = {return;
         // TODO Implement runtime spring config (optional)
         userDetailsService(UserDetailsService)
         securityCodeDao(SecurityCode.Dao)
